@@ -1,0 +1,104 @@
+// To call up the exponential function [math.pow()]
+@use 'sass:math';
+@use 'sass:map';
+
+// 👉 Fonts
+
+$font-family-sans-serif: 'Poppins', sans-serif;
+$font-family-monospace: 'IBM Plex Mono', monospace;
+
+// Type scale
+
+$base-font-size: 1.6rem; // 16px
+$base-line-height: 1.5; // Base copy height (in unitless REM)
+
+// ============================================= //
+//               Type Scale Mixin                //
+// ============================================= //
+
+$text-size-map: (
+  1: 4xl,
+  2: 3xl,
+  3: 2xl,
+  4: xl,
+  5: lg,
+);
+
+@mixin type-scale($scale, $base: null) {
+  @if $base == null {
+    $base: $base-font-size;
+  }
+
+  // List here to use common scales. simply pass the abbreviation as part of the
+  //  argument. EX: "@include type-scale($scale: m2)"
+  $scaleList: (
+    // minor second
+    m2: 1.067,
+    // Major second
+    M2: 1.125,
+    // minor third
+    m3: 1.2,
+    // Major third
+    M3: 1.25,
+    // Perfect fourth
+    P4: 1.333
+  );
+
+  @each $name, $scaleVal in $scaleList {
+    @if $scale == $name {
+      $scale: $scaleVal;
+    }
+  }
+
+  // Store values as CSS variables to be pulled for other text
+  :root {
+    @for $i from 1 through 5 {
+      --text-#{map.get($text-size-map,$i)}: #{math.pow($scale, (6 - $i)) *
+        $base};
+    }
+    --text-sm: #{math.pow($scale, -1) * $base};
+    --text-xsm: #{math.pow($scale, -2) * $base};
+    --text-xxsm: #{math.pow($scale, -3) * $base};
+
+    --text-base: #{math.pow($scale, 0) * $base};
+  }
+}
+
+// ============================================= //
+//          Mixins for Vertical Rhythm           //
+// ============================================= //
+
+@mixin line-height($num) {
+  line-height: #{$num * $base-line-height + 'rem'};
+}
+
+@mixin margin-top($num) {
+  margin-top: #{$num * $base-line-height + 'rem'};
+}
+
+@mixin margin-bottom($num) {
+  margin-bottom: #{$num * $base-line-height + 'rem'};
+}
+
+// ============================================= //
+//                  Font Weight                  //
+// ============================================= //
+
+$font-weights: (
+  extralight: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
+);
+
+@mixin generateFontWeightsVar {
+  :root {
+    @each $weight, $value in $font-weights {
+      --font-#{$weight}: #{$value};
+    }
+  }
+}

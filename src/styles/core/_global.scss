@@ -1,0 +1,85 @@
+@use 'sass:meta';
+@use 'sass:string';
+
+// ABSTRACTS
+// i.e. _colors, _mixins, _variables
+@use '../abstracts' as abs;
+
+// CORE
+@use './typography' as typo;
+@use './spacing' as spacer;
+
+@forward './reset';
+@forward './shadow';
+
+// Mixins
+@include abs.generateShades(abs.$colors);
+
+// Major third
+@include typo.type-scale(M3);
+@include typo.generateFontWeightsVar();
+@include spacer.spacing();
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  // margin: 3rem 0 1.38rem;
+  font-family: var(--font-family-mono);
+  font-weight: 400;
+  line-height: typo.$base-line-height;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+.small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+.center {
+  max-width: 144rem;
+  margin: auto;
+}
+
+.sider {
+  max-width: 36.8rem;
+  background-color: rgb(237, 237, 237);
+  border-left: 1px solid rgb(242, 242, 242);
+  width: 100%;
+
+  @media only screen and (max-width: 903px) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

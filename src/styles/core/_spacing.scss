@@ -1,0 +1,29 @@
+$default-base-size: 1.6rem; //16px
+
+$spacing-size-map: (
+  1: 0.125,
+  2: 0.25,
+  3: 0.5,
+  4: 0.75,
+  5: 1,
+  6: 1.5,
+  7: 2,
+  8: 2.5,
+  9: 3,
+  10: 4,
+  11: 5,
+  12: 6,
+  13: 10,
+);
+
+@mixin spacing($base: null) {
+  @if ($base == null) {
+    $base: $default-base-size;
+  }
+
+  :root {
+    @each $space, $value in $spacing-size-map {
+      --spacing-#{$space}: #{$base * $value};
+    }
+  }
+}

@@ -1,0 +1,125 @@
+// 👉 Light Theme Variables
+// This file only holds Presentational Variable for light theme
+
+@use 'sass:color' as *;
+@use '../../styles/abstracts/mixins';
+
+%light-theme-vars {
+  --base-bg: var(--clr-white);
+  --base-text: var(--clr-gray-9);
+
+  @extend %tags-theme;
+
+  @extend %button-theme;
+  @extend %header-theme;
+  @extend %input-theme;
+  @extend %popover-theme;
+}
+
+/**
+ * Tags light theme styles
+ */
+
+%tags-theme {
+  --tag-bg: rgba(0, 0, 0, 0.02);
+  --tag-text-clr: var(--clr-gray-6);
+  --tag-border: 1px solid var(--clr-gray-1);
+  --tag-icon-fill: var(--clr-gray-4);
+  --tag-link-clr: var(--clr-gray-6);
+}
+
+/**
+ * TODO: - add preset for custom Colorful Tag
+ */
+
+%popover-theme {
+  --popover-bg: var(--clr-white);
+  --popover-text: var(--clr-gray-8);
+  --popover-border: var(--clr-gray-5);
+  --popover-arrow: var(--clr-gray-8);
+  --popover-close-icon: var(--clr-gray-8);
+
+  --popover-box-shadow: 1px 1px 0 var(--clr-gray-4),
+    1.4px 1.4px 0 var(--clr-gray-4);
+  --popover-focus-box-shadow: -1px -1px 0 var(--clr-gray-5),
+    1.4px 1.4px 0px var(--clr-gray-5);
+}
+
+%input-theme {
+  --input-border: var(--clr-gray-3);
+  --input-border-focus: var(--clr-gray-4);
+  --input-bg: var(--clr-white);
+  --input-text: var(--clr-gray-8);
+  --input-placeholder-text: var(--clr-gray-1);
+}
+
+%header-theme {
+  --header-bg: var(--clr-white);
+  --header-text: var(--clr-gray-8);
+  --header-border: var(--clr-gray-2);
+  --header-logo: var(--clr-gray-8);
+  --header-logo-text: var(--clr-gray-8);
+}
+
+%button-theme {
+  // Button-default
+  --btn-text: var(--clr-gray-9);
+  --btn-icon: var(--clr-gray-8);
+  --btn-hover-border: var(--clr-gray-5);
+  --btn-hover-bg: #{adjust(#161b22, $lightness: 85%)};
+  --btn-box-shadow: -1px -1px 0 var(--clr-gray-7),
+    1.2px 1.2px 0px var(--clr-gray-7);
+  --btn-border: var(--clr-gray-2);
+  --btn-bg: var(--clr-white);
+
+  // Button-success
+  --btn-success-bg: var(--clr-green-4);
+  --btn-success-hover-bg: var(--clr-green-5);
+
+  --btn-success-text: var(--clr-white);
+
+  --btn-success-border: var(--clr-green-5);
+  --btn-success-hover-border: var(--clr-green-6);
+
+  --btn-success-disabled: rgba(35, 134, 54, 0.6);
+
+  --btn-success-box-shadow: -1px -1px 0 var(--clr-green-5),
+    1.2px 1.2px 0px var(--clr-green-5);
+
+  --btn-success-icon: var(--clr-gray-0);
+}
+
+// tn {
+//   --btn-bg: var(--clr-white);
+//   --btn-text: var(--clr-gray-9);
+
+//   // Button Success
+//   --btn-success-bg: #238636;
+//   --btn-scuccess-text: #ffffff;
+
+//   @include darkTheme {
+//     --btn-shadow: 0 0 transparent;
+//     --btn-inset-shadow: 0 0 transparent;
+//     --btn-hover-border: #8b949e;
+//     --btn-active-bg: hsla(212, 12%, 18%, 1);
+//     --btn-active-border: #6e7681;
+//     --btn-selected-bg: #161b22;
+//     --btn-counter-bg: #30363d;
+
+//     // Button Success
+//     --btn-success-text: #ffffff;
+//     --btn-success-bg: #238636;
+//     --btn-success-border: rgba(240, 246, 252, 0.1);
+//     --btn-success-shadow: 0 0 transparent;
+//     --btn-success-inset-shadow: 0 0 transparent;
+//     --btn-success-hover-bg: #2ea043;
+//     --btn-success-hover-border: rgba(240, 246, 252, 0.1);
+//     --btn-success-selected-bg: #238636;
+//     --btn-success-selected-shadow: 0 0 transparent;
+//     --btn-success-disabled-text: rgba(255, 255, 255, 0.5);
+//     --btn-success-disabled-bg: rgba(35, 134, 54, 0.6);
+//     --btn-success-disabled-border: rgba(240, 246, 252, 0.1);
+//     --btn-success-icon: #ffffff;
+//     --btn-success-counter-bg: rgba(255, 255, 255, 0.2);
+//   }
+// }

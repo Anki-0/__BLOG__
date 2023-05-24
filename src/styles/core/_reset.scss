@@ -1,0 +1,84 @@
+// ============================================= //
+//                 Reset Defaults                //
+// ============================================= //
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: inherit;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%; // 10px -> 1rem
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-mono);
+  background-color: var(--base-bg);
+  color: var(--base-text);
+  font-weight: 500;
+  line-height: 1.75;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+
+  // [data-theme='dark'] & {
+  // background-color: var(--base-dark-bg);
+  // color: var.$text-;
+  // }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}

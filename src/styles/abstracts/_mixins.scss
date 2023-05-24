@@ -1,0 +1,40 @@
+// ================================================= //
+//                 Reset Defaults Mixin              //
+// ================================================= //
+
+@mixin darkTheme {
+  [data-theme='dark'] & {
+    @content;
+  }
+}
+
+// Truncate Mixim
+
+@mixin truncate($width, $lineClamp) {
+  max-width: $width;
+  // white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lineClamp;
+  -webkit-box-orient: vertical;
+}
+
+@mixin abs-position($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin mq($query) {
+  @media only screen and #{$query} {
+    @content;
+  }
+}

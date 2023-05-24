@@ -1,0 +1,13 @@
+// ======================================================================== //
+//     👉 This file hold variable like padding, margins, height... etc.     //
+// ======================================================================== //
+
+@use '../Themes';
+
+:root[data-theme='light'] {
+  @extend %light-theme-vars;
+}
+
+:root[data-theme='dark'] {
+  @extend %dark-theme-vars;
+}

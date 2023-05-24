@@ -1,0 +1,89 @@
+// 👉 Dark Theme Variables
+// This file only holds Presentational Variable for dark theme
+
+%dark-theme-vars {
+  --base-bg: var(--clr-gray-9);
+  --base-text: var(--clr-gray-1);
+
+  @extend %tags-theme;
+
+  @extend %button-theme;
+  @extend %header-theme;
+  @extend %input-theme;
+  @extend %popover-theme;
+}
+
+/**
+ * Tags light theme styles
+ */
+
+%tags-theme {
+  --tag-bg: var(--clr-gray-8);
+  --tag-text-clr: var(--clr-gray-0);
+  --tag-border: 1px solid var(--clr-gray-4);
+  --tag-icon-fill: var(--clr-gray-0);
+  --tag-link-clr: var(--clr-gray-0);
+}
+
+/**
+ * TODO: - add preset for custom Colorful Tag
+ */
+
+%popover-theme {
+  --popover-bg: var(--clr-gray-8);
+  --popover-text: var(--clr-gray-0);
+  --popover-border: var(--clr-gray-3);
+  --popover-arrow: var(--clr-gray-1);
+  --popover-close-icon: var(--clr-gray-1);
+
+  --popover-box-shadow: 1px 1px 0 var(--clr-gray-4),
+    1.4px 1.4px 0 var(--clr-gray-4);
+  --popover-focus-box-shadow: -1px -1px 0 var(--clr-gray-3),
+    1.4px 1.4px 0px var(--clr-gray-3);
+}
+
+%input-theme {
+  --input-border: var(--clr-gray-3);
+  --input-border-focus: var(--clr-gray-2);
+  --input-bg: var(--clr-gray-9);
+  --input-text: var(--clr-gray-0);
+  --input-placeholder-text: var(--clr-gray-3);
+}
+
+%header-theme {
+  --header-bg: var(--clr-gray-8);
+  --header-text: var(--clr-gray-0);
+
+  --header-border: var(--clr-gray-5);
+  --header-logo: var(--clr-gray-0);
+
+  --header-logo-text: var(--clr-gray-0);
+}
+
+%button-theme {
+  // Button Default
+  --btn-text: var(--clr-gray-0);
+  --btn-icon: var(--clr-gray-0);
+  --btn-hover-border: var(--clr-gray-3);
+  --btn-hover-bg: var(--clr-gray-6);
+  --btn-box-shadow: -1px -1px 0 var(--clr-gray-4),
+    1.2px 1.2px 0px var(--clr-gray-4);
+  --btn-border: rgba(240, 246, 252, 0.1);
+  --btn-bg: var(--clr-gray-8);
+
+  // Button Success
+  --btn-success-bg: var(--clr-green-5);
+  --btn-success-hover-bg: var(--clr-green-4);
+
+  --btn-success-text: var(--clr-white);
+
+  --btn-success-border: var(--clr-green-4);
+  --btn-success-hover-border: var(--clr-green-5);
+
+  --btn-success-disabled: rgba(35, 134, 54, 0.6);
+
+  --btn-success-box-shadow: -1px -1px 0 var(--clr-green-5),
+    1.2px 1.2px 0px var(--clr-green-5);
+
+  --btn-success-icon: var(--clr-gray-0);
+}
