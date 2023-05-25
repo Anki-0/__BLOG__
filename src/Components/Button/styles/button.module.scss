@@ -1,0 +1,96 @@
+@use '../../../styles/core/typography' as typo;
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  appearance: none;
+  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+
+  &:disabled {
+    cursor: none;
+    opacity: 0.8;
+  }
+}
+
+//////////////////////////////////////////////
+////             BUTTON VARIENT           ////
+//////////////////////////////////////////////
+
+.btn {
+  // button default varient
+  &--varient-default {
+    color: var(--btn-text);
+    background-color: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    box-shadow: var(--btn-box-shadow);
+
+    &-icon {
+      svg {
+        fill: var(--btn-icon);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--btn-hover-bg);
+      border-color: var(--btn-hover-border);
+    }
+  }
+
+  // button success varient
+  &--varient-success {
+    background-color: var(--btn-success-bg);
+    color: var(--btn-success-text);
+    border: 1px solid var(--btn-success-border);
+    box-shadow: var(--btn-success-box-shadow);
+
+    &-icon {
+      svg {
+        fill: var(--btn-success-icon);
+      }
+    }
+
+    &:disabled {
+      background-color: var(--btn-success-disabled);
+    }
+
+    &:hover,
+    &:focus {
+      border-color: var(--btn-success-hover-border);
+      background-color: var(--btn-success-hover-bg);
+    }
+  }
+}
+
+//////////////////////////////////////////////
+////             BUTTON SIZE              ////
+//////////////////////////////////////////////
+
+// button default size
+.btn--size-default {
+  padding: var(--spacing-2) var(--spacing-5);
+  font-size: 1.4rem;
+  font-weight: var(--font-normal, 500);
+}
+
+// button small size
+.btn--sm {
+  padding: 0 var(--spacing-4);
+  font-size: 1.4rem;
+}
+
+// button medium seze
+.btn--md {
+  padding: var(--spacing-3) var(--spacing-5);
+}
+
+// button large
+.btn--lg {
+  padding: var(--spacing-4) var(--spacing-6);
+}
