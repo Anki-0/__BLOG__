@@ -1,0 +1,37 @@
+// =============================================================== //
+//                  Tags Story Card Light Theme                    //
+// =============================================================== //
+%story-card--light-theme {
+  --story-card-bg: var(--clr-white-1);
+  --story-card-border: var(--clr-gray-1);
+
+  --story-card-title: var(--clr-gray-8);
+  --story-card-title-text-underline: var(--clr-gray-4);
+
+  --story-card-subTitle: var(--clr-gray-5);
+  --story-card-username: var(--clr-gray-6);
+  --story-card-displayname: var(--clr-gray-4);
+  --story-card-date: var(--clr-gray-5);
+
+  --story-card-tag-bg: var(--clr-white-2);
+  --story-card-tag-bg-hover: var(--clr-white-3);
+}
+
+// =============================================================== //
+//                  Tags Story Card Dark Theme                    //
+// =============================================================== //
+%story-card--dark-theme {
+  --story-card-bg: var(--clr-black-8);
+  --story-card-border: var(--clr-gray-5);
+
+  --story-card-title: var(--clr-black-1);
+  --story-card-title-text-underline: var(--clr-gray-0);
+
+  --story-card-subTitle: var(--clr-gray-1);
+  --story-card-username: var(--clr-gray-0);
+  --story-card-displayname: var(--clr-gray-1);
+  --story-card-date: var(--clr-gray-1);
+
+  --story-card-tag-bg: var(--clr-gray-8);
+  --story-card-tag-bg-hover: var(--clr-gray-6);
+}

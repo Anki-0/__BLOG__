@@ -1,0 +1,94 @@
+@use 'sass:math';
+@use '../../../styles/abstracts/mixins' as mixins;
+
+$header-height: 7rem;
+$header-logo-width: 3rem;
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--header-bg);
+  height: $header-height;
+  border-bottom: 1px solid var(--header-border);
+  padding: 0 var(--spacing-6);
+
+  @include mixins.mq('(max-width: 524px)') {
+    padding: 0 var(--spacing-3);
+  }
+}
+
+.logo {
+  order: 2;
+  & > a {
+    display: flex;
+    align-items: center;
+    // margin: auto;
+  }
+
+  @include mixins.mq('(max-width: 760px)') {
+    order: 1;
+    & > a {
+      margin: 0;
+    }
+  }
+
+  &__svg {
+    position: relative;
+    width: $header-logo-width;
+    fill: var(--header-logo);
+
+    @include mixins.mq('(max-width: 760px)') {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &__text {
+    display: none;
+    margin-left: 1rem;
+    color: var(--header-text);
+    font-size: var(--text-size-lg);
+    font-weight: 800;
+
+    @include mixins.mq('(min-width: 760px)') {
+      display: inline-block;
+    }
+  }
+}
+
+.header__left-portion {
+  order: 1;
+
+  @include mixins.mq('(max-width: 760px)') {
+    order: 2;
+    margin-right: var(--spacing-5);
+    margin-left: auto;
+  }
+}
+
+.header__right-portion {
+  display: flex;
+  align-items: center;
+  order: 3;
+
+  .auth__actions {
+    display: flex;
+    align-items: center;
+
+    &--login {
+    }
+
+    &--signup {
+      margin-left: var(--spacing-3);
+    }
+  }
+
+  .user__menu {
+    & .logout {
+      font-size: 5rem;
+      color: red;
+    }
+  }
+}

@@ -2,22 +2,23 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--font-IBM-Plex-mono);
   height: auto;
   margin: 0;
   padding: 0;
   color: var(--tag-text-clr);
-  font-size: 1.2rem;
-  line-height: 2rem;
   list-style: none;
   // margin-inline-end: 8px;
-  padding-inline: 7px;
   white-space: nowrap;
   border: var(--tag-border);
-  background: var(--tag-bg);
-  border-radius: 0.4rem;
+  background-color: var(--tag-bg);
   opacity: 1;
   transition: all 0.2s;
   text-align: start;
+
+  &:hover {
+    background-color: var(--tag-bg-hover);
+  }
 
   & > a {
     color: var(--tag-link-clr);
@@ -52,4 +53,27 @@
 
 .tag-hidden {
   display: none;
+}
+
+.tag__size {
+  &-default {
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+    list-style: none;
+    padding-inline: 1.4rem;
+    padding-block: 0.3rem;
+  }
+  &-sm {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    list-style: none;
+    padding-inline: 0.7rem;
+  }
+  &-md {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    list-style: none;
+    padding-inline: 8px;
+    padding-block: 4px;
+  }
 }

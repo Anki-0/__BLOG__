@@ -1,0 +1,15 @@
+@use '../../styles/abstracts/mixins' as mix;
+
+.data-post-wrapper {
+  margin: 0px 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-gap: 2rem;
+
+  @include mix.mq('(max-width: #{calc(900 / 16)}em) ') {
+    margin: 0 2rem;
+  }
+  @include mix.mq('(max-width: #{calc(682 / 16)}em) ') {
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  }
+}

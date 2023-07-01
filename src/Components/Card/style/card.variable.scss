@@ -1,0 +1,40 @@
+@use 'sass:color';
+
+// =============================================================== //
+//                     Blog Card Light Theme                       //
+// =============================================================== //
+%card--light-theme {
+  --card-bg: var(--clr-white-0);
+  --card-border: var(--clr-border);
+  --card-heading: var(--clr-gray-6);
+  --card-sub-heading: var(--clr-gray-5);
+  --card-icon: var(--clr-gray-4);
+  --card-icon-hover: var(--clr-gray-9);
+  --card-date: var(--clr-gray-3);
+  --card-image-border: var(--clr-gray-7);
+  --card-author: var(--clr-gray-5);
+  --card-tag-bg: var(--clr-white-2);
+  --card-tag-bg-hover: var(--clr-white-3);
+}
+
+// =============================================================== //
+//                   Blog Card Dark Theme                          //
+// =============================================================== //
+
+%card--dark-theme {
+  --card-bg: var(--clr-gray-8);
+  --card-border: var(--clr-gray-5);
+  --card-heading: var(--clr-gray-0);
+  --card-sub-heading: var(--clr-gray-1);
+  --card-icon: var(--clr-gray-1);
+  --card-icon-hover: var(--clr-gray-0);
+  --card-date: var(--clr-gray-1);
+  --card-image-border: var(--clr-gray-5);
+  --card-author: var(--clr-gray-0);
+
+  --card-popover-text: var(--clr-gray-2);
+  --card-popover-hover-text: var(--clr-gray-0);
+
+  --card-tag-bg: var(--clr-gray-8);
+  --card-tag-bg-hover: var(--clr-gray-6);
+}

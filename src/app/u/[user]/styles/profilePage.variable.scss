@@ -1,0 +1,11 @@
+%profile-page--light-theme {
+  --profilepage-text: var(--clr-gray-9);
+  --profilepage-subtext: var(--clr-gray-4);
+  --profilepage-border: var(--clr-border);
+}
+
+%profile-page--dark-theme {
+  --profilepage-text: var(--clr-black-0);
+  --profilepage-subtext: var(--clr-black-2);
+  --profilepage-border: var(--clr-border);
+}

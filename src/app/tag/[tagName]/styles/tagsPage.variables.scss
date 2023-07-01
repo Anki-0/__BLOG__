@@ -1,0 +1,9 @@
+%tag-page--light-theme {
+  --tagpage-heading: var(--clr-gray-8);
+  --tagpage-subText: var(--clr-gray-3);
+}
+
+%tag-page--dark-theme {
+  --tagpage-heading: var(--clr-gray-0);
+  --tagpage-subText: var(--clr-gray-2);
+}

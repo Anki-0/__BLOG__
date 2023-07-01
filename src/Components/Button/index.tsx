@@ -10,11 +10,15 @@ import React, { forwardRef } from 'react';
  *          -- secondary
  *          -- danger
  *          -- info
- *       - add status tag eg: success, processing, error, warrning
- *       - implement dragable tags using @dnd-kit
+ *          -- dashed
+ *          -- text
+ *          -- link
+ *          -- ghost
+ *
+ * - add loading spinner icon component
  */
 
-type btnType =
+export type btnType =
   | 'default'
   | 'primary'
   | 'success'
@@ -27,13 +31,16 @@ type btnType =
 type btnShape = 'default' | 'round' | 'circle';
 type btnSizes = 'sm' | 'md' | 'lg' | 'default';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children?: React.ReactNode;
   varient?: btnType;
   size?: btnSizes;
   icon?: React.ReactNode;
   button?: btnShape;
+  loading?: boolean;
+  disable?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
@@ -41,17 +48,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     children,
     varient = 'default',
     className,
+    loading = false,
     icon,
     size = 'default',
+    disable,
     ...rest
   } = props;
 
   const buttonVarientClasses = classNames(
     styles.btn,
-    {
-      [styles['btn--varient-default']]: varient === 'default',
-      [styles['btn--varient-success']]: varient === 'success',
-    },
+    styles[`btn--varient-${varient}`],
+    // {
+    // [styles['btn--varient-default']]: varient === 'default',
+    // [styles['btn--varient-success']]: varient === 'success',
+    // [styles['btn--varient-text']]: varient === 'text',
+    // },
     className,
   );
 
@@ -76,17 +87,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       : {};
 
   const iconNode = (
-    <span className={styles[`btn--${varient}-icon`]}> {icon}</span>
+    <span className={styles[`btn--${varient}-icon`]}>{icon}</span>
   );
+
+  const loadingIconNode = loading && '...loading';
 
   return (
     <button
       ref={ref}
       className={`${buttonVarientClasses} ${buttonSizeClasses} `}
       style={buttonWithIconOnlyStyle}
+      type="button"
+      disabled={disable}
       {...rest}
     >
-      {icon && iconNode}
+      {icon && !loading ? iconNode : loadingIconNode}
       {children}
     </button>
   );

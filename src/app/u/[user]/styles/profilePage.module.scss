@@ -1,0 +1,169 @@
+@use '../../../../styles/abstracts/_mixins.scss' as mix;
+@use 'sass:math';
+
+.profile-wrapper {
+  padding: 0 2rem;
+}
+
+.user {
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+  display: flex;
+
+  @include mix.mq('(max-width: #{calc(391 / 16)}em)') {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & > .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 4rem;
+
+    @include mix.mq('(max-width: #{calc(578 / 16)}em)') {
+      margin-left: 3rem;
+    }
+
+    @include mix.mq('(max-width: #{calc(391 / 16)}em)') {
+      margin-top: 3rem;
+      margin-left: 0;
+      align-items: center;
+    }
+  }
+
+  & > &__avatar {
+    width: 15rem;
+    height: 15rem;
+    aspect-ratio: 1 / 1;
+
+    @include mix.mq('(max-width: #{calc(578 / 16)}em)') {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mix.mq('(max-width: #{calc(391 / 16)}em)') {
+      align-items: center;
+    }
+
+    & > .user__display-name {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--profilepage-text);
+
+      @include mix.mq('(max-width: #{calc(578 / 16)}em)') {
+        font-size: 2.8rem;
+      }
+    }
+
+    & > .user__username {
+      position: relative;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--profilepage-subtext);
+    }
+  }
+
+  & .subscribe-btn {
+    @include mix.mq('(max-width: #{calc(391 / 16)}em)') {
+      margin-top: 1rem;
+    }
+    & > button {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.tablist {
+  position: relative;
+  & > .tabs {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 8rem;
+    border-bottom: 1px solid var(--profilepage-border);
+    padding: 0 1rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & > a {
+      padding-bottom: 1.2rem;
+
+      &:first-child {
+        border-bottom: 1px solid #000;
+      }
+    }
+
+    & p {
+      font-size: 1.5rem;
+      color: var(--profilepage-subtext);
+    }
+  }
+
+  & > .sroll-left--btn,
+  .sroll-right--btn {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    & button {
+      cursor: pointer;
+      & > svg {
+        fill: var(--clr-black-2);
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  & > .sroll-left--btn {
+    left: 0;
+    padding-right: 42px;
+
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.75) 25%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgb(255, 255, 255) 75%
+    );
+  }
+  & > .sroll-right--btn {
+    padding-left: 42px;
+    right: 0;
+    background: linear-gradient(
+      86deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.75) 25%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgb(255, 255, 255) 75%
+    );
+  }
+}
+
+.stories {
+  // margin: 0px 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-gap: 2.5rem;
+
+  @include mix.mq('(max-width: #{calc(682 / 16)}em)') {
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  }
+}

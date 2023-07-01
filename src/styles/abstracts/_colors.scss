@@ -21,8 +21,20 @@
 $white: #ffffff;
 $black: #000000;
 $colors: (
-  gray: (
-    0: rgb(240, 246, 252),
+  white: (
+    0: #ffffff,
+    1: #f9fafb,
+    2: #f4f5f7,
+    3: #eff1f3,
+    4: #eaecef,
+    5: #e5e7eb,
+    6: #e0e3e7,
+    7: #dbdee3,
+    8: #d6dadf,
+    9: #d1d5db,
+  ),
+  black: (
+    0: #f0f6fc,
     1: #c9d1d9,
     2: #b1bac4,
     3: #8b949e,
@@ -32,6 +44,18 @@ $colors: (
     7: #21262d,
     8: #161b22,
     9: #0d1117,
+  ),
+  gray: (
+    0: #cdd9e5,
+    1: #adbac7,
+    2: #909dab,
+    3: #768390,
+    4: #636e7b,
+    5: #545d68,
+    6: #444c56,
+    7: #373e47,
+    8: #2d333b,
+    9: #22272e,
   ),
   blue: (
     0: #cae8ff,

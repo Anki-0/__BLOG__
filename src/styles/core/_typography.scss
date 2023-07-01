@@ -17,11 +17,20 @@ $base-line-height: 1.5; // Base copy height (in unitless REM)
 // ============================================= //
 
 $text-size-map: (
-  1: 4xl,
-  2: 3xl,
-  3: 2xl,
-  4: xl,
-  5: lg,
+  // 1: 4xl,
+  // 2: 3xl,
+  // 3: 2xl,
+  // 4: xl,
+  // 5: lg,
+  -3: 'xxsm',
+  -2: 'xsm',
+  -1: 'sm',
+  0: 'base',
+  1: '4xl',
+  2: '3xl',
+  3: '2xl',
+  4: 'xl',
+  5: 'lg'
 );
 
 @mixin type-scale($scale, $base: null) {
@@ -51,17 +60,21 @@ $text-size-map: (
   }
 
   // Store values as CSS variables to be pulled for other text
-  :root {
-    @for $i from 1 through 5 {
-      --text-#{map.get($text-size-map,$i)}: #{math.pow($scale, (6 - $i)) *
-        $base};
-    }
-    --text-sm: #{math.pow($scale, -1) * $base};
-    --text-xsm: #{math.pow($scale, -2) * $base};
-    --text-xxsm: #{math.pow($scale, -3) * $base};
-
-    --text-base: #{math.pow($scale, 0) * $base};
+  // :root {
+  @for $i from 1 through 5 {
+    --text-size-#{map.get($text-size-map,$i)}: #{math.pow($scale, (6 - $i)) *
+      $base}rem;
   }
+
+  @for $i from -3 through 0 {
+    --text-size-#{map.get($text-size-map,$i)}: #{math.pow($scale, $i) *
+      $base}rem;
+    //  --text-size-sm: #{math.pow($scale, -1) * $base};
+    //  --text-size-xsm: #{math.pow($scale, -2) * $base};
+    //  --text-size-xxsm: #{math.pow($scale, -3) * $base};
+    //  --text-size-base: #{math.pow($scale, 0) * $base};
+  }
+  // }
 }
 
 // ============================================= //

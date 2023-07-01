@@ -14,6 +14,8 @@ import styles from './style/tag.module.scss';
 
 const PREFIX_CLS = 'tag';
 
+type tagSize = 'md' | 'sm' | 'default';
+
 type PresetStatusColorType =
   | 'success'
   | 'processing'
@@ -38,30 +40,35 @@ export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
   closable?: boolean;
   color?: PresetColorType | PresetStatusColorType;
   closeIcon?: React.ReactNode;
+  size?: tagSize;
   /* Callback executed when tag is closed */
   //eslint-disable-next-line no-unused-vars
   onClose?: (e: React.MouseEvent<HTMLElement>) => void;
   style?: React.CSSProperties;
   icon?: React.ReactNode;
   bordered?: boolean;
+  borderRounded?: boolean | number;
 }
 
 const Tag = forwardRef<HTMLSpanElement, TagProps>((props, ref) => {
   const [visible, setVisible] = React.useState(true);
   const {
+    className,
     closable,
     closeIcon,
     onClose,
     icon,
+    size = 'default',
     children,
-    className,
     bordered = true,
+    borderRounded = false,
     style,
   } = props;
 
   // className
   const tagClassName = classNames(
     styles[PREFIX_CLS],
+    styles[`${PREFIX_CLS}__size-${size}`],
     {
       [styles[`${PREFIX_CLS}-hidden`]]: !visible,
       [styles[`${PREFIX_CLS}-borderless`]]: !bordered,
@@ -73,6 +80,12 @@ const Tag = forwardRef<HTMLSpanElement, TagProps>((props, ref) => {
 
   // Tag Styles
   const tagStyle: CSSProperties = {
+    borderRadius:
+      typeof borderRounded === 'number'
+        ? `${borderRounded / 10}rem`
+        : typeof borderRounded === 'boolean' && borderRounded
+        ? '0.4rem'
+        : '0',
     ...style,
   };
 
@@ -92,6 +105,7 @@ const Tag = forwardRef<HTMLSpanElement, TagProps>((props, ref) => {
     if (closable) {
       return (
         <span
+          data-name="tag"
           role="img"
           className={styles[`${PREFIX_CLS}-close-icon`]}
           onClick={handleCloseClick}
@@ -118,7 +132,7 @@ const Tag = forwardRef<HTMLSpanElement, TagProps>((props, ref) => {
   );
 
   return (
-    <span {...props} ref={ref} className={tagClassName} style={tagStyle}>
+    <span ref={ref} className={tagClassName} style={tagStyle}>
       {childs}
       {closeIconNode}
     </span>

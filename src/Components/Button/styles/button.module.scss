@@ -13,8 +13,8 @@
   transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 
   &:disabled {
-    cursor: none;
-    opacity: 0.8;
+    // cursor: none;
+    opacity: 0.5;
   }
 }
 
@@ -36,7 +36,7 @@
       }
     }
 
-    &:hover,
+    &:hover:not(:disabled),
     &:focus {
       background-color: var(--btn-hover-bg);
       border-color: var(--btn-hover-border);
@@ -60,11 +60,40 @@
       background-color: var(--btn-success-disabled);
     }
 
-    &:hover,
+    &:hover:not(:disabled),
     &:focus {
       border-color: var(--btn-success-hover-border);
       background-color: var(--btn-success-hover-bg);
     }
+  }
+
+  // button danger varient
+  &--varient-danger {
+    background-color: var(--btn-danger-bg);
+    color: var(--btn-danger-text);
+    border: 1px solid var(--btn-danger-border);
+    box-shadow: var(--btn-danger-box-shadow);
+
+    &-icon {
+      svg {
+        fill: var(--btn-success-icon);
+      }
+    }
+
+    &:disabled {
+      background-color: var(--btn-danger-disabled);
+    }
+
+    &:hover:not(:disabled),
+    &:focus {
+      border-color: var(--btn-danger-hover-border);
+      background-color: var(--btn-danger-hover-bg);
+    }
+  }
+
+  // button text varient
+  &--varient-text {
+    margin: 0;
   }
 }
 

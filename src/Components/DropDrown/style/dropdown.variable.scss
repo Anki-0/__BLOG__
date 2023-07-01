@@ -1,0 +1,21 @@
+%dropdown--light-theme {
+  --dropdown-bg: var(--clr-white-1);
+  --dropdown-item-text: var(--clr-gray-7);
+  --dropdown-item-highlighted-bg: var(--clr-white-3);
+  --dropdown-item-highlighted-text: var(--clr-gray-9);
+  --dropdown-label: var(--clr-gray-4);
+  --dropdown-separator: var(--clr-white-8);
+  --dropdown-icon: var(--clr-gray-8);
+  --dropdown-subtigger: var(--clr-white-5);
+}
+
+%dropdown--dark-theme {
+  --dropdown-bg: var(--clr-gray-8);
+  --dropdown-item-text: var(--clr-gray-0);
+  --dropdown-item-highlighted-bg: var(--clr-gray-6);
+  --dropdown-item-highlighted-text: var(--clr-white-3);
+  --dropdown-label: var(--clr-gray-1);
+  --dropdown-separator: var(--clr-gray-5);
+  --dropdown-icon: var(--clr-gray-1);
+  --dropdown-subtigger: var(--clr-gray-7);
+}

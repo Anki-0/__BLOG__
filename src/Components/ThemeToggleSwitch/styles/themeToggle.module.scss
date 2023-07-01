@@ -1,0 +1,22 @@
+.switch {
+  width: 7rem;
+  height: 3rem;
+  background-color: var(--theme-switch-bg);
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  border: 1px solid var(--theme-switch-border);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.switch[data-isdark='true'] {
+  justify-content: flex-end;
+}
+
+.handle {
+  width: 3rem;
+  height: 100%;
+  background-color: var(--theme-switch-handle);
+  border-radius: 60px;
+}

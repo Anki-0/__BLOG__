@@ -40,8 +40,19 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+:root {
+  &[data-theme='light'] {
+    --base-bg: var(--clr-white);
+    --base-text: var(--clr-gray-9);
+  }
+  &[data-theme='dark'] {
+    --base-bg: var(--clr-gray-9);
+    --base-text: var(--clr-gray-1);
+  }
+}
+
 body {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-IBM-Plex-mono);
   background-color: var(--base-bg);
   color: var(--base-text);
   font-weight: 500;
@@ -81,4 +92,8 @@ a {
 }
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+button {
+  background: unset;
 }

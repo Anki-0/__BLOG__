@@ -1,3 +1,6 @@
+@use 'sass:color' as *;
+@use 'sass:string' as *;
+
 // ================================================= //
 //                 Reset Defaults Mixin              //
 // ================================================= //
@@ -36,5 +39,19 @@
 @mixin mq($query) {
   @media only screen and #{$query} {
     @content;
+  }
+}
+
+@mixin theme($theme) {
+  @if $theme == 'light' {
+    :root[data-theme='light'] {
+      @content;
+    }
+  }
+
+  @if $theme == 'dark' {
+    :root[data-theme='dark'] {
+      @content;
+    }
   }
 }

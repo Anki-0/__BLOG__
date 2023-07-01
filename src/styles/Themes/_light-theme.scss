@@ -14,6 +14,8 @@
   @extend %header-theme;
   @extend %input-theme;
   @extend %popover-theme;
+  @extend %avatar-theme;
+  @extend %sider-theme;
 }
 
 /**
@@ -21,29 +23,60 @@
  */
 
 %tags-theme {
-  --tag-bg: rgba(0, 0, 0, 0.02);
+  --tag-bg: var(--clr-white-1);
+  --tag-bg-hover: var(--clr-white-3);
   --tag-text-clr: var(--clr-gray-6);
   --tag-border: 1px solid var(--clr-gray-1);
+  --tag-border-focus: var(--clr-gray-4);
   --tag-icon-fill: var(--clr-gray-4);
   --tag-link-clr: var(--clr-gray-6);
 }
 
+// =============================================================== //
+//                          Popover Theme                          //
+// =============================================================== //
+%popover-theme {
+  --popover-bg: var(--clr-white);
+  --popover-text: var(--clr-gray-6);
+  --popover-border: rgb(230, 230, 230);
+  --popover-close-icon: var(--clr-gray-3);
+
+  --popover-box-shadow: rgb(230, 230, 230) 0px 1px 4px;
+
+  --popover-focus-border: var(--clr-gray-0);
+
+  --popover-arrow: var(--clr-white);
+  --popover-arrow-border: var(--clr-gray-3);
+
+  --card-popover-text: var(--clr-gray-4);
+  --card-popover-hover-text: var(--clr-gray-9);
+}
+
+// =============================================================== //
+//                         Avatar Theme                            //
+// =============================================================== //
+
+%avatar-theme {
+  --avatar-text: var(--clr-gray-6);
+  --avatar-bg: var(--clr-gray-1);
+  --avatar-border: var(--clr-gray-3);
+}
+
+// =============================================================== //
+//                         Sider Theme                            //
+// =============================================================== //
+
+%sider-theme {
+  --sider-text: var(--clr-gray-7);
+  --sider-text-underline: var(--clr-gray-7);
+  --sider-group-title: var(--clr-gray-7);
+  --sider-btn-text: var(--clr-green-5);
+  --sider-btn-text-hover: var(--clr-green-4);
+  --sider-border: var(--clr-gray-1);
+}
 /**
  * TODO: - add preset for custom Colorful Tag
  */
-
-%popover-theme {
-  --popover-bg: var(--clr-white);
-  --popover-text: var(--clr-gray-8);
-  --popover-border: var(--clr-gray-5);
-  --popover-arrow: var(--clr-gray-8);
-  --popover-close-icon: var(--clr-gray-8);
-
-  --popover-box-shadow: 1px 1px 0 var(--clr-gray-4),
-    1.4px 1.4px 0 var(--clr-gray-4);
-  --popover-focus-box-shadow: -1px -1px 0 var(--clr-gray-5),
-    1.4px 1.4px 0px var(--clr-gray-5);
-}
 
 %input-theme {
   --input-border: var(--clr-gray-3);
@@ -56,14 +89,14 @@
 %header-theme {
   --header-bg: var(--clr-white);
   --header-text: var(--clr-gray-8);
-  --header-border: var(--clr-gray-2);
+  --header-border: var(--clr-gray-0);
   --header-logo: var(--clr-gray-8);
   --header-logo-text: var(--clr-gray-8);
 }
 
 %button-theme {
   // Button-default
-  --btn-text: var(--clr-gray-9);
+  --btn-text: var(--clr-gray-7);
   --btn-icon: var(--clr-gray-8);
   --btn-hover-border: var(--clr-gray-5);
   --btn-hover-bg: #{adjust(#161b22, $lightness: 85%)};
@@ -87,6 +120,15 @@
     1.2px 1.2px 0px var(--clr-green-5);
 
   --btn-success-icon: var(--clr-gray-0);
+
+  --btn-danger-bg: var(--clr-red-4);
+  --btn-danger-text: var(--clr-white-0);
+  --btn-danger-border: var(--clr-red-5);
+  --btn-danger-box-shadow: -1px -1px 0 var(--clr-red-5),
+    1.2px 1.2px 0px var(--clr-red-5);
+  --btn-danger-disabled: rgba(228, 61, 61, 0.6);
+  --btn-danger-hover-border: var(--clr-red-6);
+  --btn-danger-hover-bg: var(--clr-red-5);
 }
 
 // tn {

@@ -11,14 +11,42 @@
 
 @forward './reset';
 @forward './shadow';
+@forward './mdxSyntaxHighlight';
 
 // Mixins
 @include abs.generateShades(abs.$colors);
 
 // Major third
-@include typo.type-scale(M3);
 @include typo.generateFontWeightsVar();
 @include spacer.spacing();
+
+:root {
+  // --font-family-mono: 'IBM Plex Mono', monospace;
+  @include typo.type-scale(M3, 1.6);
+
+  @include abs.mq('(max-width: #{calc(690 / 16)}em) ') {
+    @include typo.type-scale(M2, 1.6);
+  }
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--clr-gray-9);
+  background: var(--clr-white-7);
+}
+
+::selection {
+  color: var(--clr-gray-9);
+  background: var(--clr-white-7);
+}
+
+a {
+  color: var(--clr-blue-2);
+
+  &:visited {
+    color: var(--clr-blue-4);
+  }
+}
 
 h1,
 h2,
@@ -26,7 +54,7 @@ h3,
 h4,
 h5 {
   // margin: 3rem 0 1.38rem;
-  font-family: var(--font-family-mono);
+  font-family: var(--font-IBM-Plex-mono);
   font-weight: 400;
   line-height: typo.$base-line-height;
 }
@@ -60,17 +88,6 @@ h5 {
 .center {
   max-width: 144rem;
   margin: auto;
-}
-
-.sider {
-  max-width: 36.8rem;
-  background-color: rgb(237, 237, 237);
-  border-left: 1px solid rgb(242, 242, 242);
-  width: 100%;
-
-  @media only screen and (max-width: 903px) {
-    display: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

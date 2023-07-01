@@ -3,11 +3,36 @@
 // ======================================================================== //
 
 @use '../Themes';
+@use '../../app/tag/[tagName]/styles/tagsPage.variables.scss';
+@use '../../Components/Story_Card/styles/stody-card.variable.scss';
+@use '../../Components/DropDrown/style/dropdown.variable.scss';
+@use '../../Components/ThemeToggleSwitch/styles/themeToggler.variable.scss';
+@use '../../Components/Card/style/card.variable.scss';
+@use '../../app/u/[user]/styles/profilePage.variable.scss';
+@use '../../app/settings/styles/settings.variable.scss';
 
 :root[data-theme='light'] {
+  // Global Variables
+  --clr-border: var(--clr-gray-0);
+
   @extend %light-theme-vars;
+  @extend %tag-page--light-theme;
+  @extend %story-card--light-theme;
+  @extend %dropdown--light-theme;
+  @extend %themeswitch--light-theme;
+  @extend %card--light-theme;
+  @extend %profile-page--light-theme;
 }
 
 :root[data-theme='dark'] {
+  // Global Variables
+  --clr-border: var(--clr-gray-6);
+
   @extend %dark-theme-vars;
+  @extend %tag-page--dark-theme;
+  @extend %story-card--dark-theme;
+  @extend %dropdown--dark-theme;
+  @extend %themeswitch--dark-theme;
+  @extend %card--dark-theme;
+  @extend %profile-page--dark-theme;
 }

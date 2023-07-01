@@ -1,16 +1,18 @@
 // 👉 Dark Theme Variables
 // This file only holds Presentational Variable for dark theme
 
-%dark-theme-vars {
-  --base-bg: var(--clr-gray-9);
-  --base-text: var(--clr-gray-1);
+@use 'sass:color';
 
+%dark-theme-vars {
   @extend %tags-theme;
 
   @extend %button-theme;
   @extend %header-theme;
   @extend %input-theme;
   @extend %popover-theme;
+  @extend %card-theme;
+  @extend %avatar-theme;
+  @extend %sider-theme;
 }
 
 /**
@@ -18,29 +20,76 @@
  */
 
 %tags-theme {
-  --tag-bg: var(--clr-gray-8);
+  --tag-bg: var(--clr-gray-9);
+  --tag-bg-hover: var(--clr-gray-7);
+
   --tag-text-clr: var(--clr-gray-0);
   --tag-border: 1px solid var(--clr-gray-4);
+  --tag-border-focus: var(--clr-gray-2);
+
   --tag-icon-fill: var(--clr-gray-0);
   --tag-link-clr: var(--clr-gray-0);
+}
+
+// =============================================================== //
+//                        Blog Card Theme                          //
+// =============================================================== //
+
+%card-theme {
+  --card-border: 1px solid var(--clr-gray-4);
+  --card-heading: var(--clr-gray-0);
+  --card-sub-heading: var(--clr-gray-1);
+  --card-icon: var(--clr-gray-1);
+  --card-icon-hover: var(--clr-gray-0);
+  --card-date: var(--clr-gray-1);
+  --card-image-border: var(--clr-gray-7);
+  --card-author: var(--clr-gray-0);
+
+  --card-popover-text: var(--clr-gray-2);
+  --card-popover-hover-text: var(--clr-gray-0);
+}
+
+// =============================================================== //
+//                          Popover Theme                          //
+// =============================================================== //
+%popover-theme {
+  --popover-bg: var(--clr-gray-8);
+  --popover-text: var(--clr-gray-0);
+  --popover-border: var(--clr-gray-5);
+  --popover-close-icon: var(--clr-gray-3);
+
+  --popover-box-shadow: 1px 1px 0 var(--clr-gray-4);
+
+  --popover-arrow: var(--clr-gray-8);
+  --popover-arrow-border: var(--clr-gray-0);
+}
+
+// =============================================================== //
+//                         Avatar Theme                            //
+// =============================================================== //
+
+%avatar-theme {
+  --avatar-text: var(--clr-gray-2);
+  --avatar-bg: var(--clr-gray-6);
+  --avatar-border: var(--clr-gray-1);
+}
+
+// =============================================================== //
+//                         Sider Theme                            //
+// =============================================================== //
+
+%sider-theme {
+  --sider-text: var(--clr-gray-1);
+  --sider-text-underline: var(--clr-gray-1);
+  --sider-group-title: var(--clr-gray-0);
+  --sider-btn-text: var(--clr-green-4);
+  --sider-btn-text-hover: var(--clr-green-2);
+  --sider-border: var(--clr-gray-5);
 }
 
 /**
  * TODO: - add preset for custom Colorful Tag
  */
-
-%popover-theme {
-  --popover-bg: var(--clr-gray-8);
-  --popover-text: var(--clr-gray-0);
-  --popover-border: var(--clr-gray-3);
-  --popover-arrow: var(--clr-gray-1);
-  --popover-close-icon: var(--clr-gray-1);
-
-  --popover-box-shadow: 1px 1px 0 var(--clr-gray-4),
-    1.4px 1.4px 0 var(--clr-gray-4);
-  --popover-focus-box-shadow: -1px -1px 0 var(--clr-gray-3),
-    1.4px 1.4px 0px var(--clr-gray-3);
-}
 
 %input-theme {
   --input-border: var(--clr-gray-3);
@@ -54,7 +103,7 @@
   --header-bg: var(--clr-gray-8);
   --header-text: var(--clr-gray-0);
 
-  --header-border: var(--clr-gray-5);
+  --header-border: var(--clr-gray-6);
   --header-logo: var(--clr-gray-0);
 
   --header-logo-text: var(--clr-gray-0);
@@ -86,4 +135,6 @@
     1.2px 1.2px 0px var(--clr-green-5);
 
   --btn-success-icon: var(--clr-gray-0);
+
+  --btn-danger-bg: var(--clr-red-0);
 }
